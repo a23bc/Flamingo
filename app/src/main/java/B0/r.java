@@ -1,0 +1,15 @@
+package B0;
+
+import android.text.PrecomputedText;
+import android.text.TextPaint;
+
+/* JADX INFO: loaded from: classes.dex */
+public abstract /* synthetic */ class r {
+    public static /* synthetic */ PrecomputedText.Params.Builder f(TextPaint textPaint) {
+        return new PrecomputedText.Params.Builder(textPaint);
+    }
+
+    public static /* bridge */ /* synthetic */ boolean y(CharSequence charSequence) {
+        return charSequence instanceof PrecomputedText;
+    }
+}

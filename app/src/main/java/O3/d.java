@@ -1,0 +1,68 @@
+package O3;
+
+import N3.p;
+import android.os.Build;
+import androidx.work.impl.WorkDatabase;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+/* JADX INFO: loaded from: classes.dex */
+public abstract class d {
+
+    /* JADX INFO: renamed from: a */
+    public static final /* synthetic */ int f5618a = 0;
+
+    static {
+        p.i("Schedulers");
+    }
+
+    public static void a(N3.b bVar, WorkDatabase workDatabase, List list) {
+        if (list == null || list.size() == 0) {
+            return;
+        }
+        W3.j jVarN = workDatabase.n();
+        workDatabase.c();
+        try {
+            int i7 = Build.VERSION.SDK_INT;
+            int i8 = bVar.h;
+            if (i7 == 23) {
+                i8 /= 2;
+            }
+            ArrayList arrayListE = jVarN.e(i8);
+            ArrayList arrayListD = jVarN.d();
+            if (arrayListE.size() > 0) {
+                long jCurrentTimeMillis = System.currentTimeMillis();
+                Iterator it = arrayListE.iterator();
+                while (it.hasNext()) {
+                    jVarN.m(((W3.i) it.next()).f7805a, jCurrentTimeMillis);
+                }
+            }
+            workDatabase.h();
+            workDatabase.f();
+            if (arrayListE.size() > 0) {
+                W3.i[] iVarArr = (W3.i[]) arrayListE.toArray(new W3.i[arrayListE.size()]);
+                Iterator it2 = list.iterator();
+                while (it2.hasNext()) {
+                    c cVar = (c) it2.next();
+                    if (cVar.e()) {
+                        cVar.f(iVarArr);
+                    }
+                }
+            }
+            if (arrayListD.size() > 0) {
+                W3.i[] iVarArr2 = (W3.i[]) arrayListD.toArray(new W3.i[arrayListD.size()]);
+                Iterator it3 = list.iterator();
+                while (it3.hasNext()) {
+                    c cVar2 = (c) it3.next();
+                    if (!cVar2.e()) {
+                        cVar2.f(iVarArr2);
+                    }
+                }
+            }
+        } catch (Throwable th) {
+            workDatabase.f();
+            throw th;
+        }
+    }
+}

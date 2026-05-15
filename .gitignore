@@ -1,0 +1,56 @@
+```
+# Android build artifacts
+*.apk
+*.aar
+*.so
+*.dex
+
+# Android build directories
+build/
+.gradle/
+local.properties
+
+# Android metadata
+META-INF/
+
+# Android native libraries
+app/src/main/lib/
+
+# Android generated files
+app/build/
+
+# Java compiled classes
+*.class
+*.jar
+
+# Kotlin compilation
+*.kotlin_module
+
+# Gradle
+.gradle/
+!gradle.properties
+!gradlew
+!gradlew.bat
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Local configuration
+.env
+.env.local
+*.env.*
+
+# Version control metadata
+.gitattributes
+```
